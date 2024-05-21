@@ -1,10 +1,39 @@
 #include <SFML/Graphics.hpp>
 using namespace sf;
 int main() {
-    // Crear la ventana
-    sf::RenderWindow window(sf::VideoMode(560, 620), "Círculo Rojo");
+     // Crear la ventana
+    sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
 
+    // Cargar PNG
+    sf::Texture texture;
+    if (!texture.loadFromFile("fondo.png"))
+    {
+        // Si carga falla, mostrar mensaje de error
+        return EXIT_FAILURE;
+    }
+
+    // Crear sprite y asociarlo a la textura
+    sf::Sprite sprite(texture);
+
+    // Bucle principal
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        window.clear();
+        window.draw(sprite);
+        window.display();
+    }
+
+    return 0;
+}
+    /*
+    
     // Crear círculo rojo
     sf::CircleShape circle(30); // Radio: 30 píxeles
     circle.setFillColor(sf::Color::Red);
@@ -36,3 +65,4 @@ int main() {
 
     return 0;
 }
+*/
