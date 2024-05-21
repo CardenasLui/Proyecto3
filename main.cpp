@@ -33,7 +33,7 @@ int main() {
     return 0;
 }
     /*
-    
+    ----------------------------------------------------------------------------------------------
     // Crear círculo rojo
     sf::CircleShape circle(30); // Radio: 30 píxeles
     circle.setFillColor(sf::Color::Red);
