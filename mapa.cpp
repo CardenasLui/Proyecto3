@@ -18,3 +18,4 @@ mapagrid::mapagrid(int rows, int cols)
 
      this->next = vector<vector<int>>(rows, vector<int>(cols, 0)); // 
 }
+void drawTo(RenderWindow &window); 

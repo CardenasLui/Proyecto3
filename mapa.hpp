@@ -10,15 +10,23 @@ using namespace std;
 
 
 
-class mapatile {
+class mapagrid {
 private: 
 vector<vector<int>> grid;
 vector<vector<int>> next;
 int rows, cols;
-int sizeX, sizeY;
+int sizeX;
+int sizeY;
 Vector2i size;
 public:
-Vector2f pos;
+
+mapagrid(int rows, int cols);
+
+
+
+void update();
+void drawTo(RenderWindow &window); 
+
 
 };
 
