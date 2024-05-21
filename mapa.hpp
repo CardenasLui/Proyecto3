@@ -19,7 +19,6 @@ int sizeX;
 int sizeY;
 Vector2i size;
 public:
-
 mapagrid(int rows, int cols);
 
 
