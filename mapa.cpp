@@ -40,8 +40,6 @@ mapagrid::mapagrid(int rows, int cols)
                    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
                    {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1} };
 }
-
-void mapagrid::drawTo(RenderWindow &window)
 {
 
     for (int i = 0; i < rows; i++) // esto es para llenar la cuaf¿dricula con 0

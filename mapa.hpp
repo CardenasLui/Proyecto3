@@ -8,7 +8,7 @@ using namespace sf;
 using namespace std;
 
 
-
+class Fantasma;
 
 class mapagrid {
 private: 
