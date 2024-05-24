@@ -5,7 +5,7 @@ int main() {
      // Crear la ventana
     sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
-    mapagrid Mapagrid(32, 28);
+    mapagrid Mapagrid(32,28);
     // Cargar PNG
     sf::Texture texture;
     if (!texture.loadFromFile("fondo.png"))
