@@ -7,10 +7,6 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
     mapagrid Mapagrid(32,28);
-    sf::CircleShape circle(7); // Radio: 30 píxeles1
-    circle.setFillColor(sf::Color::Red);
-    circle.setPosition(400, 300); // Posición inicial del círculo en centro
-    // Cargar PNG
     Fantasma rojo(Vector2f{15.f,14.f});
     sf::Texture texture;
     if (!texture.loadFromFile("fondo.png"))
@@ -21,6 +17,7 @@ int main() {
 
    // Crear sprite y asociarlo a la textura
     sf::Sprite sprite(texture);
+    // Cargar PNG
 
     // Bucle principal
     while (window.isOpen())
