@@ -20,6 +20,8 @@ int main() {
     sf::Sprite sprite(texture);
     // Cargar PNG
         sprite.setColor(Color::White);
+
+        int p=0;
     // Bucle principal
     while (window.isOpen())
     {
@@ -30,6 +32,16 @@ int main() {
                 window.close();
             
         }
+        if (Keyboard::isKeyPressed(Keyboard::Left))
+             p=1;
+         if (Keyboard::isKeyPressed(Keyboard::Right))
+             p=2;
+         if (Keyboard::isKeyPressed(Keyboard::Up))
+             p=3;
+         if (Keyboard::isKeyPressed(Keyboard::Down))
+             p=4;
+       }   
+        Mapagrid.mov(p,rojo);
         Mapagrid.spawn(rojo);
          
 
@@ -39,7 +51,6 @@ int main() {
         rojo.drawTo(window);
         window.display();
 
-    }
 
     // // Crear círculo rojo
    

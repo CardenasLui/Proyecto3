@@ -3,6 +3,8 @@
 
 mapagrid::mapagrid(int rows, int cols)
 {
+    this->x = 0;
+    this->y = 0;
     this->sizeX = 20;
     this->sizeY = 20;
     this->rows = rows;
@@ -112,4 +114,14 @@ void mapagrid::update()
 
 void mapagrid::spawn(Fantasma &fantasmin){
     fantasmin.fantasma.setPosition(260,340);
+}
+
+void mapagrid::mov(int p, Fantasma &rojo){
+        if(p=1){
+            if(this->grid(13+this->x-1,13+this->y)==0){
+                this->grid(13+this->x-1,13+this->y)=2;
+                this->grid(13+this->x,13+this->y)=0;
+                //rojo.sprite.getPosition.x(){(x-20)}
+            }   
+        }
 }
