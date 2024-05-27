@@ -11,6 +11,7 @@ Fantasma::Fantasma(Vector2f position){
     texture.setRepeated(true);
     this->fantasma.setTexture(texture);
     this->fantasma.setPosition(position);
+    //this->fantasma.setScale(1.5,1.5);
     
 }
 

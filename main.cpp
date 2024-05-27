@@ -15,10 +15,11 @@ int main() {
         return EXIT_FAILURE;
     }
 
+
    // Crear sprite y asociarlo a la textura
     sf::Sprite sprite(texture);
     // Cargar PNG
-
+        sprite.setColor(Color::White);
     // Bucle principal
     while (window.isOpen())
     {
@@ -27,7 +28,9 @@ int main() {
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            
         }
+        Mapagrid.spawn(rojo);
          
 
         window.clear();

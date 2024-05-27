@@ -24,6 +24,7 @@ mapagrid(int rows, int cols);
 
 
 void update();
+void spawn(Fantasma &fantasmin);
 void drawTo(RenderWindow &window); 
 void click(int x, int y);
 

@@ -1,4 +1,5 @@
 #include "mapa.hpp"
+#include "fantasma.hpp"
 
 mapagrid::mapagrid(int rows, int cols)
 {
@@ -106,4 +107,9 @@ void mapagrid::update()
         }
     }
     this->grid = this->next;
+}
+
+
+void mapagrid::spawn(Fantasma &fantasmin){
+    fantasmin.fantasma.setPosition(260,340);
 }
