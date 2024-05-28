@@ -116,8 +116,8 @@ void mapagrid::spawn(Fantasma &Fantasma){
 
 void mapagrid::mov(int p, Fantasma &rojo){
     Vector2f pos = Vector2f(rojo.x,rojo.y);
-    int indexX = pos/sizeX;
-    int indexY = pos/sizeY;
+    int indexX = pos.x/sizeX;
+    int indexY = pos.y/sizeY;
       if(grid.indexX,indexY==0){
          if(p==1){
                  this->grid[13+this->x-1][13+this->y]=2;
