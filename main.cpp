@@ -21,31 +21,32 @@ int main() {
         // Si carga falla, mostrar mensaje de error
         return EXIT_FAILURE;
     }
+    int p=0;
     
    
 
 
-  sf::Clock clock;
+//   sf::Clock clock;
 
-    // Crear una fuente para mostrar el tiempo
-    sf::Font font;
-    if (!font.loadFromFile("Jersey25Charted-Regular.ttf")) {
-        std::cerr << "Error al cargar la fuente." << std::endl;
-        return -1;
-    }
+//     // Crear una fuente para mostrar el tiempo
+//     sf::Font font;
+//     if (!font.loadFromFile("Jersey25Charted-Regular.ttf")) {
+//         std::cerr << "Error al cargar la fuente." << std::endl;
+//         return -1;
+//     }
 
-    // Crear un texto para mostrar el tiempo
-    sf::Text text;
-    text.setFont(font);
-    text.setCharacterSize(24);
-    text.setFillColor(sf::Color::Red);
+//     // Crear un texto para mostrar el tiempo
+//     sf::Text text;
+//     text.setFont(font);
+//     text.setCharacterSize(24);
+//     text.setFillColor(sf::Color::Red);
 
-    text.setPosition(210.f, 260.f); //posicion
+//     text.setPosition(210.f, 260.f); //posicion
 
    
 
-    // Tiempo total del temporizador en segundos
-    const float totalTime = 10.f;
+//     // Tiempo total del temporizador en segundos
+//     const float totalTime = 10.f;
 
     // Bucle principal de la aplicación
     
@@ -64,23 +65,31 @@ int main() {
                 window.close();
             
         }
-        
+           // Movimiento del fantasma con teclas flecha
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+            p=1;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+            p=2;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+            p=3;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+            p=4;
 
-        // Obtener el tiempo transcurrido
-        sf::Time elapsed = clock.getElapsedTime();
-        float seconds = elapsed.asSeconds();
+        // // Obtener el tiempo transcurrido
+        // sf::Time elapsed = clock.getElapsedTime();
+        // float seconds = elapsed.asSeconds();
 
-        // Convertir el tiempo transcurrido a segundos y actualizar el texto
-        std::ostringstream ss;
-        ss << "Tiempo: " << seconds;
-        text.setString(ss.str());
+        // // Convertir el tiempo transcurrido a segundos y actualizar el texto
+        // std::ostringstream ss;
+        // ss << "Tiempo: " << seconds;
+        // text.setString(ss.str());
 
-        // Calcular el tamaño del círculo basado en el tiempo transcurrido
+        // // Calcular el tamaño del círculo basado en el tiempo transcurrido
         
        
 
 
-        // Dibujar el círculo y el texto
+        // // Dibujar el círculo y el texto
     
 
         Mapagrid.spawn(rojo);
@@ -91,7 +100,7 @@ int main() {
         Mapagrid.drawTo(window);
        // rojo.update(p);
         rojo.drawTo(window);
-         window.draw(text);
+         //window.draw(text);
         window.display();
 
     }
