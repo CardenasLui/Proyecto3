@@ -46,7 +46,7 @@ int main()
         window.clear();
         window.draw(sprite);
         Mapagrid.drawTo(window);
-        //rojo.update(p);
+       // rojo.update(p);
         rojo.drawTo(window);
         window.display();
 

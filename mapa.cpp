@@ -115,13 +115,31 @@ void mapagrid::spawn(Fantasma &Fantasma){
 };
 
 void mapagrid::mov(int p, Fantasma &rojo){
-        if(p=1){
-             if(this->grid[13+this->x-1][13+this->y]==0){
+    Vector2f pos = Vector2f(rojo.x,rojo.y);
+    int indexX = pos/sizeX;
+    int indexY = pos/sizeY;
+      if(grid.indexX,indexY==0){
+         if(p==1){
                  this->grid[13+this->x-1][13+this->y]=2;
                  this->grid[13+this->x][13+this->y]=0;
-                 //rojo.sprite.getPosition.x(){(x-20)}
-         }   
-     }
+                 //rojo.sprite.getPosition.x(){(x-20) 
+            }
+            if(p==2){
+                 this->grid[13+this->x-1][13+this->y]=2;
+                 this->grid[13+this->x][13+this->y]=0;
+                 //rojo.sprite.getPosition.x(){(x-20)}   
+            }
+            if(p==3){
+                 this->grid[13+this->x-1][13+this->y]=2;
+                 this->grid[13+this->x][13+this->y]=0;
+                 //rojo.sprite.getPosition.x(){(x-20)}   
+            }
+            if(p==4){
+                 this->grid[13+this->x-1][13+this->y]=2;
+                 this->grid[13+this->x][13+this->y]=0;
+                 //rojo.sprite.getPosition.x(){(x-20)}  
+            }
+        }
     this->grid = this->next;
 };
 
