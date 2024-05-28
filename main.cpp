@@ -2,12 +2,13 @@
 #include "mapa.hpp"
 #include "fantasma.hpp"
 using namespace sf;
-int main() {
-     // Crear la ventana
+int main()
+{
+    // Crear la ventana
     sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
-    mapagrid Mapagrid(32,28);
-    Fantasma rojo(Vector2f{15.f,14.f});
+    mapagrid Mapagrid(32, 28);
+    Fantasma rojo(Vector2f{15.f, 14.f});
     sf::Texture texture;
     if (!texture.loadFromFile("fondo.png"))
     {
@@ -15,13 +16,12 @@ int main() {
         return EXIT_FAILURE;
     }
 
-
-   // Crear sprite y asociarlo a la textura
+    // Crear sprite y asociarlo a la textura
     sf::Sprite sprite(texture);
     // Cargar PNG
-        sprite.setColor(Color::White);
+    sprite.setColor(Color::White);
 
-        int p=0;
+    int p = 0;
     // Bucle principal
     while (window.isOpen())
     {
@@ -30,55 +30,52 @@ int main() {
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            
         }
         if (Keyboard::isKeyPressed(Keyboard::Left))
-             p=1;
-         if (Keyboard::isKeyPressed(Keyboard::Right))
-             p=2;
-         if (Keyboard::isKeyPressed(Keyboard::Up))
-             p=3;
-         if (Keyboard::isKeyPressed(Keyboard::Down))
-             p=4;
-       }   
-        Mapagrid.mov(p,rojo);
+            p = 1;
+        if (Keyboard::isKeyPressed(Keyboard::Right))
+            p = 2;
+        if (Keyboard::isKeyPressed(Keyboard::Up))
+            p = 3;
+        if (Keyboard::isKeyPressed(Keyboard::Down))
+            p = 4;
+
+        Mapagrid.mov(p, rojo);
         Mapagrid.spawn(rojo);
-         
 
         window.clear();
         window.draw(sprite);
         Mapagrid.drawTo(window);
+        //rojo.update(p);
         rojo.drawTo(window);
         window.display();
 
+        // // Crear círculo rojo
 
-    // // Crear círculo rojo
-   
-    // Bucle 
-    // while (window.isOpen()) {
-    //     sf::Event event;
-    //     while (window.pollEvent(event)) {
-    //         if (event.type == sf::Event::Closed)
-    //             window.close();
-    //     }
+        // Bucle
+        // while (window.isOpen()) {
+        //     sf::Event event;
+        //     while (window.pollEvent(event)) {
+        //         if (event.type == sf::Event::Closed)
+        //             window.close();
+        //     }
 
-    //     Movimiento del fantasma con teclas flecha
-    //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-    //         circle.move(-1, 0);
-    //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-    //         circle.move(1, 0);
-    //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-    //         circle.move(0, -1);
-    //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-    //         circle.move(0, 1);
+        //     Movimiento del fantasma con teclas flecha
+        //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+        //         circle.move(-1, 0);
+        //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+        //         circle.move(1, 0);
+        //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        //         circle.move(0, -1);
+        //     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+        //         circle.move(0, 1);
 
-    //     Dibujar todo
-    //     window.clear();
-    //    Mapagrid.drawTo(window);
-    //     window.draw(circle);
-    //     window.display();
-   // }
-    
+        //     Dibujar todo
+        //     window.clear();
+        //    Mapagrid.drawTo(window);
+        //     window.draw(circle);
+        //     window.display();
+    }
 
     return 0;
 }

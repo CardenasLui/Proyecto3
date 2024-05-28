@@ -7,6 +7,7 @@ class Fantasma{
     
 
     public:
+    int x,y;
     Sprite fantasma;
     Fantasma(Vector2f position);
     void drawTo(RenderWindow &window);
