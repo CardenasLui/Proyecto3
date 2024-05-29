@@ -28,27 +28,27 @@ int main() {
    
 
 
-//   sf::Clock clock;
+  sf::Clock clock;
 
 //     // Crear una fuente para mostrar el tiempo
-//     sf::Font font;
-//     if (!font.loadFromFile("Jersey25Charted-Regular.ttf")) {
-//         std::cerr << "Error al cargar la fuente." << std::endl;
-//         return -1;
+  sf::Font font;
+   if (!font.loadFromFile("ChillPixels-Matrix.otf")) {
+      std::cerr << "Error al cargar la fuente." << std::endl;
+     return -1;
 //     }
 
 //     // Crear un texto para mostrar el tiempo
-//     sf::Text text;
-//     text.setFont(font);
-//     text.setCharacterSize(24);
-//     text.setFillColor(sf::Color::Red);
+  sf::Text text;
+  text.setFont(font);
+ text.setCharacterSize(24);
+ text.setFillColor(sf::Color::Blue);
 
-//     text.setPosition(210.f, 260.f); //posicion
+  text.setPosition(210.f, 260.f); //posicion
 
    
 
 //     // Tiempo total del temporizador en segundos
-//     const float totalTime = 10.f;
+  const float totalTime = 10.f;
 
     // Bucle principal de la aplicación
     
