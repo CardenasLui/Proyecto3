@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "mapa.hpp"
 #include "fantasma.hpp"
+#include "Pacman.cpp"
 #include <iostream>
 #include <sstream>
 using namespace sf;
@@ -15,6 +16,7 @@ int main() {
     circle.setPosition(400, 300); // Posición inicial del círculo en centro
     // Cargar PNG
     Fantasma rojo(Vector2f{15.f,14.f});
+    Pacman amarillo(Vector2f{15.f,14.f});
     sf::Texture texture;
     if (!texture.loadFromFile("fondo.png"))
     {
@@ -93,7 +95,7 @@ int main() {
     
 
         Mapagrid.spawn(rojo);
-         
+         Mapagrid.spawn(amarillo);
 
         window.clear();
         window.draw(sprite);

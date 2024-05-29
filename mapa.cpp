@@ -1,5 +1,6 @@
 #include "mapa.hpp"
 #include "fantasma.hpp"
+#include "Pacman.cpp"
 
 mapagrid::mapagrid(int rows, int cols)
 {
@@ -109,7 +110,11 @@ void mapagrid::update()
 }
    //grid[Fantasma.x][Fantasma.y]=2;
 
-    
+
+   void mapagrid::spawn(Pacman &Pacman){
+    Pacman.pacman.setPosition(260,230);
+};
+
 void mapagrid::spawn(Fantasma &Fantasma){
     Fantasma.fantasma.setPosition(260,340);
 };
