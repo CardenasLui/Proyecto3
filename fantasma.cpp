@@ -1,3 +1,4 @@
+
 #include <SFML/Graphics.hpp>
 #include "fantasma.hpp"
 #include "mapa.hpp"

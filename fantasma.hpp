@@ -1,11 +1,12 @@
+#pragma once
 #include <SFML/Graphics.hpp>
 using namespace std;
 using namespace sf;
+
+
 class Fantasma{
     private:
     sf::Texture texture;
-    
-
     public:
     int x,y;
     Sprite fantasma;

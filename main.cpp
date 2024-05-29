@@ -1,7 +1,8 @@
+
 #include <SFML/Graphics.hpp>
 #include "mapa.hpp"
 #include "fantasma.hpp"
-#include "Pacman.cpp"
+#include "Pacman.hpp"
 #include <iostream>
 #include <sstream>
 using namespace sf;
@@ -94,9 +95,10 @@ int main() {
         // // Dibujar el círculo y el texto
     
 
-        Mapagrid.spawn(rojo);
-         Mapagrid.spawn(amarillo);
-
+        //Mapagrid.spawn(&rojo);
+        rojo.fantasma.setPosition(260,230);
+        //Mapagrid.spawn(&amarillo);
+        amarillo.pacman.setPosition(260,340);
         window.clear();
         window.draw(sprite);
         Mapagrid.drawTo(window);

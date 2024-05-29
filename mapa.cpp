@@ -1,3 +1,4 @@
+
 #include "mapa.hpp"
 #include "fantasma.hpp"
 #include "Pacman.cpp"
@@ -111,38 +112,42 @@ void mapagrid::update()
    //grid[Fantasma.x][Fantasma.y]=2;
 
 
+/*
    void mapagrid::spawn(Pacman &Pacman){
     Pacman.pacman.setPosition(260,230);
-};
-
+    };
 void mapagrid::spawn(Fantasma &Fantasma){
     Fantasma.fantasma.setPosition(260,340);
-};
+};*/
 
 void mapagrid::mov(int p, Fantasma &rojo){
     Vector2f pos = Vector2f(rojo.x,rojo.y);
     int indexX = pos.x/sizeX;
     int indexY = pos.y/sizeY;
+
+    int posGridX = rojo.fantasma.getPosition().x/32;
+    int posGridY = rojo.fantasma.getPosition().y/28;//Obtiene la posición del 2 en el grid en base al sprite
+
       if(indexX,indexY==0){
          if(p==1){
-                 this->grid[13+this->x-1][13+this->y]=2;
-                 this->grid[13+this->x][13+this->y]=0;
-                 rojo.setPosition(rojo.getPosition().x-20, rojo.getPosition().y);
+                 this->grid[posGridX+this->x-1][posGridY+this->y]=2;
+                 this->grid[posGridX+this->x][posGridY+this->y]=0;
+                 rojo.fantasma.setPosition(rojo.fantasma.getPosition().x-20, rojo.fantasma.getPosition().y);
             }
             if(p==2){
                  this->grid[13+this->x+1][13+this->y]=2;
                  this->grid[13+this->x][13+this->y]=0;
-                 rojo.setPosition(rojo.getPosition().x+20, rojo.getPosition().y);   
+                 rojo.fantasma.setPosition(rojo.fantasma.getPosition().x+20, rojo.fantasma.getPosition().y);   
             }
             if(p==3){
                  this->grid[13+this->y-1][13+this->x]=2;
                  this->grid[13+this->y][13+this->x]=0;
-                 rojo.setPosition(rojo.getPosition().x, rojo.getPosition().y-20);   
+                 rojo.fantasma.setPosition(rojo.fantasma.getPosition().x, rojo.fantasma.getPosition().y-20);   
             }
             if(p==4){
                  this->grid[13+this->y+1][13+this->x]=2;
                  this->grid[13+this->y][13+this->x]=0;
-                 rojo.setPosition(rojo.getPosition().x, rojo.getPosition().y+20); 
+                 rojo.fantasma.setPosition(rojo.fantasma.getPosition().x, rojo.fantasma.getPosition().y+20); 
             }
         }
     this->grid = this->next;
