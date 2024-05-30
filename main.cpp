@@ -26,9 +26,9 @@ int main() {
     }
     int p=0;
     //Mapagrid.spawn(&rojo);
-        rojo.fantasma.setPosition(260,220);
+        rojo.fantasma.setPosition(260,260);
         //Mapagrid.spawn(&amarillo);
-        amarillo.pacman.setPosition(260,340);
+        amarillo.pacman.setPosition(240,220);
    
 
 
@@ -109,6 +109,7 @@ int main() {
             Mapagrid.drawTo(window);
             // rojo.update(p);
             rojo.drawTo(window);
+            amarillo.drawTo(window);
             //window.draw(text);
             window.display();
             window.clear();
