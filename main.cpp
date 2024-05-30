@@ -47,7 +47,7 @@ int main() {
  text.setCharacterSize(20);
  text.setFillColor(sf::Color::Blue);
 
-  text.setPosition(225.f, 238.f); //posicion
+  text.setPosition(226.f, 270.f); //posicion
 
    
     int coolddown=0;
@@ -105,9 +105,9 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
         //Mapagrid.spawn(&rojo);
             if(p)rojo.mover(Mapagrid.grid,p, coolddown);
             
-            
-            window.draw(sprite);
             Mapagrid.drawTo(window);
+            window.draw(sprite);
+            
             // rojo.update(p);
             rojo.drawTo(window);
             amarillo.drawTo(window);
@@ -128,7 +128,7 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
         }
         // Convertir el tiempo transcurrido a segundos y actualizar el texto
        if (seconds <= 0) {
-            break;
+            return 0;
         }
 
         // Calcular el tamaño del círculo basado en el tiempo transcurrido
