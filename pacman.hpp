@@ -12,7 +12,7 @@ class Pacman{
     int dir;
     Sprite pacman;
     Pacman(Vector2f position);
-    //void UpdatePac(vector<vector<int>> grid);
+    void UpdatePac(vector<vector<int>> grid);
     void drawTo(RenderWindow &window);
  };
  #endif 

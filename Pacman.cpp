@@ -7,8 +7,8 @@ using namespace std;
 using namespace sf;
 
 Pacman::Pacman(Vector2f position){
-     //this->dir = rand()%3 +1;
-    
+     this->dir = 1;
+
     if (!texture.loadFromFile("PacmanP.png"))
     {
         std::cout<<"error"<<endl;
@@ -21,7 +21,8 @@ Pacman::Pacman(Vector2f position){
     void Pacman::drawTo(RenderWindow &window){
     window.draw(this->pacman);
     }
-    /*
+
+    
     void Pacman::UpdatePac(vector<vector<int>> grid){
         // para dir 1=arriba 2=abajo 3=derecha 4=izquierda
             if (dir==1){
@@ -58,4 +59,4 @@ Pacman::Pacman(Vector2f position){
                 }
             }
             }
-    }*/
+    }
