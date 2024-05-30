@@ -9,6 +9,7 @@ using namespace sf;
 using namespace std;
 int main() {
      // Crear la ventana
+     int a=rand()%3+1;
     sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
     mapagrid Mapagrid(32,28);
@@ -103,6 +104,7 @@ int main() {
         }
         //Mapagrid.spawn(&rojo);
             if(p)rojo.mover(Mapagrid.grid,p, coolddown);
+            amarillo.mover(Mapagrid.grid,a, coolddown);
             
             
             window.draw(sprite);
