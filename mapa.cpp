@@ -135,18 +135,18 @@ void mapagrid::mov(int p, Fantasma &rojo){
                  rojo.fantasma.setPosition(rojo.fantasma.getPosition().x-20, rojo.fantasma.getPosition().y);
             }
             if(p==2){
-                 this->grid[13+this->x+1][13+this->y]=2;
-                 this->grid[13+this->x][13+this->y]=0;
+                 this->grid[posGridX+this->x+1][posGridY+this->y]=2;
+                 this->grid[posGridX+this->x][posGridY+this->y]=0;
                  rojo.fantasma.setPosition(rojo.fantasma.getPosition().x+20, rojo.fantasma.getPosition().y);   
             }
             if(p==3){
-                 this->grid[13+this->y-1][13+this->x]=2;
-                 this->grid[13+this->y][13+this->x]=0;
+                 this->grid[posGridY+this->y-1][posGridX+this->x]=2;
+                 this->grid[posGridY+this->y][posGridX+this->x]=0;
                  rojo.fantasma.setPosition(rojo.fantasma.getPosition().x, rojo.fantasma.getPosition().y-20);   
             }
             if(p==4){
-                 this->grid[13+this->y+1][13+this->x]=2;
-                 this->grid[13+this->y][13+this->x]=0;
+                 this->grid[posGridY+this->y+1][posGridX+this->x]=2;
+                 this->grid[posGridY+this->y][posGridX+this->x]=0;
                  rojo.fantasma.setPosition(rojo.fantasma.getPosition().x, rojo.fantasma.getPosition().y+20); 
             }
         }

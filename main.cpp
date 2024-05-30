@@ -36,7 +36,7 @@ int main() {
    if (!font.loadFromFile("ChillPixels-Matrix.otf")) {
       std::cerr << "Error al cargar la fuente." << std::endl;
      return -1;
-//     }
+     }
 
 //     // Crear un texto para mostrar el tiempo
   sf::Text text;
@@ -78,21 +78,21 @@ int main() {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
             p=4;
 
-        // // Obtener el tiempo transcurrido
-        // sf::Time elapsed = clock.getElapsedTime();
-        // float seconds = elapsed.asSeconds();
+        // Obtener el tiempo transcurrido
+        sf::Time elapsed = clock.getElapsedTime();
+        float seconds = elapsed.asSeconds();
 
-        // // Convertir el tiempo transcurrido a segundos y actualizar el texto
-        // std::ostringstream ss;
-        // ss << "Tiempo: " << seconds;
-        // text.setString(ss.str());
+        // Convertir el tiempo transcurrido a segundos y actualizar el texto
+        std::ostringstream ss;
+        ss << "Tiempo: " << seconds;
+        text.setString(ss.str());
 
-        // // Calcular el tamaño del círculo basado en el tiempo transcurrido
+        // Calcular el tamaño del círculo basado en el tiempo transcurrido
         
        
 
 
-        // // Dibujar el círculo y el texto
+        // Dibujar el círculo y el texto
     
 
         //Mapagrid.spawn(&rojo);
@@ -138,4 +138,4 @@ int main() {
     
 
     return 0;
-}
+ }
