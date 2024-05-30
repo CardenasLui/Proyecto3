@@ -24,6 +24,7 @@ void Fantasma::drawTo(RenderWindow &window){
 
 
 void Fantasma::mover(vector<vector<int>> &grid,int p, int &cont){
+    cout<<cont<<endl;
     if(p==1 && cont==0){
         if(grid[13+x-1][17+y]==0){
             this->fantasma.setPosition(this->fantasma.getPosition().x-20,this->fantasma.getPosition().y);

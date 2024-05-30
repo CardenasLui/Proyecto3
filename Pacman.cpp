@@ -27,7 +27,7 @@ Pacman::Pacman(Vector2f position){
 void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
 
     if(p==1 ){
-        cout<<"entra"<<endl;
+        
         if(grid[13+x-1][11+y]==0){
             this->pacman.setPosition(this->pacman.getPosition().x-20,this->pacman.getPosition().y);
             cont++;
@@ -38,11 +38,11 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
            
 
         }else{
-            p=rand()%3+1;
+            p=rand()%4+1;
         }
     }
     if(p==2){
-        cout<<"entra"<<endl;
+        
         if(grid[13+x+1][11+y]==0){
             this->pacman.setPosition(this->pacman.getPosition().x+20,this->pacman.getPosition().y);
             cont++;
@@ -53,12 +53,12 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
            
 
         }else{
-            p=rand()%3+1;
+            p=rand()%4+1;
         }
         
     }
     if(p==3){
-         cout<<"entra"<<endl;
+         
 
         if(grid[13+x][11+y-1]==0){
             this->pacman.setPosition(this->pacman.getPosition().x,this->pacman.getPosition().y-20);
@@ -70,11 +70,11 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
            
 
         }else{
-            p=rand()%3+1;
+            p=rand()%4+1;
         }
     }
     if(p==4){
-         cout<<"entra"<<endl;
+         
         if(grid[13+x][11+y+1]==0){
             this->pacman.setPosition(this->pacman.getPosition().x,this->pacman.getPosition().y+20);
             cont++;
@@ -85,7 +85,7 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
            
 
         }else{
-            p=rand()%3+1;
+            p=rand()%4+1;
         }
     }
     

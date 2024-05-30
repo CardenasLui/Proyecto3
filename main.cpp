@@ -9,7 +9,7 @@ using namespace sf;
 using namespace std;
 int main() {
      // Crear la ventana
-     int a=rand()%3+1;
+     int a=rand()%4+1;
     sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
     mapagrid Mapagrid(32,28);
@@ -52,6 +52,7 @@ int main() {
 
    
     int coolddown=0;
+    int cdfantasma=0;
 const int totalTime = 60; // Tiempo total del temporizador en segundos
     int remainingTime = totalTime;
 
@@ -104,8 +105,8 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
 
         }
         //Mapagrid.spawn(&rojo);
-            if(p)rojo.mover(Mapagrid.grid,p, coolddown);
-            amarillo.mover(Mapagrid.grid,a, coolddown);
+            rojo.mover(Mapagrid.grid,p, coolddown);
+            amarillo.mover(Mapagrid.grid,a, cdfantasma);
             
             Mapagrid.drawTo(window);
             window.draw(sprite);
