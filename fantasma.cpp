@@ -25,41 +25,41 @@ void Fantasma::drawTo(RenderWindow &window){
 
 void Fantasma::mover(vector<vector<int>> &grid,int p, int &cont){
     if(p==1 && cont==0){
-        if(grid[17+x-1][17+y]==0){
+        if(grid[13+x-1][17+y]==0){
             this->fantasma.setPosition(this->fantasma.getPosition().x-20,this->fantasma.getPosition().y);
             cont++;
-            grid[17+x-1][17+y]==2;
-            grid[17+x][17+y]==0;
+            grid[13+x-1][17+y]==2;
+            grid[13+x][17+y]==0;
             x--;
 
         }
     }
     if(p==2&& cont==0){
-        if(grid[17+x+1][17+y]==0){
+        if(grid[13+x+1][17+y]==0){
             this->fantasma.setPosition(this->fantasma.getPosition().x+20,this->fantasma.getPosition().y);
             cont++;
-            grid[17+x+1][17+y]==2;
-            grid[17+x][17+y]==0;
+            grid[13+x+1][17+y]==2;
+            grid[13+x][17+y]==0;
             x++;
 
         }
     }
     if(p==3&& cont==0){
-        if(grid[17+x][17+y-1]==0){
+        if(grid[13+x][17+y-1]==0){
             this->fantasma.setPosition(this->fantasma.getPosition().x,this->fantasma.getPosition().y-20);
             cont++;
-            grid[17+x][17+y-1]==2;
-            grid[17+x][17+y]==0;
+            grid[13+x][17+y-1]==2;
+            grid[13+x][17+y]==0;
             y--;
 
         }
     }
     if(p==4&& cont==0){
-        if(grid[17+x][17+y+1]==0){
+        if(grid[13+x][17+y+1]==0){
             this->fantasma.setPosition(this->fantasma.getPosition().x,this->fantasma.getPosition().y+20);
             cont++;
-            grid[17+x][17+y+1]==2;
-            grid[17+x][17+y]==0;
+            grid[13+x][17+y+1]==2;
+            grid[13+x][17+y]==0;
             y++;
 
         }
