@@ -12,6 +12,7 @@ class Fantasma{
     Sprite fantasma;
     Fantasma(Vector2f position);
     void drawTo(RenderWindow &window);
+    void mover(vector<vector<int>>&grid,int p, int &cont);
  };
 
         //     Movimiento del fantasma con teclas flecha

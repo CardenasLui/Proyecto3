@@ -1,7 +1,7 @@
 
 #include "mapa.hpp"
 #include "fantasma.hpp"
-#include "Pacman.cpp"
+
 
 mapagrid::mapagrid(int rows, int cols)
 {

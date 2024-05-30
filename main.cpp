@@ -25,7 +25,10 @@ int main() {
         return EXIT_FAILURE;
     }
     int p=0;
-    
+    //Mapagrid.spawn(&rojo);
+        rojo.fantasma.setPosition(260,220);
+        //Mapagrid.spawn(&amarillo);
+        amarillo.pacman.setPosition(260,340);
    
 
 
@@ -47,7 +50,7 @@ int main() {
   text.setPosition(210.f, 260.f); //posicion
 
    
-
+    int coolddown=0;
 //     // Tiempo total del temporizador en segundos
   const float totalTime = 10.f;
 
@@ -57,6 +60,7 @@ int main() {
    // Crear sprite y asociarlo a la textura
     sf::Sprite sprite(texture);
     // Cargar PNG
+
         sprite.setColor(Color::White);
     // Bucle principal
     while (window.isOpen())
@@ -66,18 +70,50 @@ int main() {
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+             if(event.type==Event::KeyPressed){
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+                     p=1;
+                    cout<<"left"<<endl;
+                    coolddown++;
+                }
+                   
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
+                    p=2;
+                    cout<<"right"<<endl;
+                    coolddown++;
+                }
+                    
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+                    p=3;
+                    cout<<"up"<<endl;
+                    coolddown++;
+                }
+                    
+                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+                    p=4;
+                    cout<<"down"<<endl;
+                    coolddown++;
+                }
+                cout<<p<<endl;
+                    
+             }
             
-        }
-           // Movimiento del fantasma con teclas flecha
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-            p=1;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-            p=2;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-            p=3;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-            p=4;
+            
 
+        }
+        //Mapagrid.spawn(&rojo);
+            if(p)rojo.mover(Mapagrid.grid,p, coolddown);
+            
+            
+            window.draw(sprite);
+            Mapagrid.drawTo(window);
+            // rojo.update(p);
+            rojo.drawTo(window);
+            //window.draw(text);
+            window.display();
+            window.clear();
+           // Movimiento del fantasma con teclas flecha
+        
         // Obtener el tiempo transcurrido
         sf::Time elapsed = clock.getElapsedTime();
         float seconds = elapsed.asSeconds();
@@ -95,17 +131,7 @@ int main() {
         // Dibujar el círculo y el texto
     
 
-        //Mapagrid.spawn(&rojo);
-        rojo.fantasma.setPosition(260,230);
-        //Mapagrid.spawn(&amarillo);
-        amarillo.pacman.setPosition(260,340);
-        window.clear();
-        window.draw(sprite);
-        Mapagrid.drawTo(window);
-       // rojo.update(p);
-        rojo.drawTo(window);
-         //window.draw(text);
-        window.display();
+        
 
     }
 
