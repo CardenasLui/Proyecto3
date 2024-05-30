@@ -26,7 +26,7 @@ int main() {
     }
     int p=0;
     //Mapagrid.spawn(&rojo);
-        rojo.fantasma.setPosition(260,260);
+        rojo.fantasma.setPosition(260,340);
         //Mapagrid.spawn(&amarillo);
         amarillo.pacman.setPosition(240,220);
    
