@@ -3,6 +3,7 @@
 #include "pacman.hpp"
 #include "mapa.hpp"
 #include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 using namespace sf;
 
@@ -23,40 +24,69 @@ Pacman::Pacman(Vector2f position){
     }
 
     
-    void Pacman::UpdatePac(vector<vector<int>> grid){
-        // para dir 1=arriba 2=abajo 3=derecha 4=izquierda
-            if (dir==1){
-            if (grid[x][y-1] == 0){
-                grid[x][y-1] = 3;
-                grid[x][y] = 0;
-                this->pacman.setPosition(pacman.getPosition().x, pacman.getPosition().y-20);
-            }else{
-                if (grid[x+1][y] == 0 && grid[x-1][y] == 0){
-                this->dir = rand()%2+3;
-                if (dir=3){
-                    grid[x+1][y] = 3;
-                    grid[x][y] = 0;
-                    this->pacman.setPosition(pacman.getPosition().x+20, pacman.getPosition().y);
-                }
-                if (dir=4){
-                    grid[x-1][y] = 3;
-                    grid[x][y] = 0;
-                    this->pacman.setPosition(pacman.getPosition().x-20, pacman.getPosition().y);
-                }
-                }else{
-                    if (grid[x+1][y] == 0){
-                        dir=3;
-                        grid[x+1][y] = 3;
-                        grid[x][y] = 0;
-                        this->pacman.setPosition(pacman.getPosition().x+20, pacman.getPosition().y);
-                    }
-                    if (grid[x-1][y] == 0){
-                        dir=4;
-                        grid[x-1][y] = 3;
-                        grid[x][y] = 0;
-                        this->pacman.setPosition(pacman.getPosition().x-20, pacman.getPosition().y);
-                    }
-                }
-            }
-            }
+void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
+
+    if(p==1 ){
+        cout<<"entra"<<endl;
+        if(grid[13+x-1][11+y]==0){
+            this->pacman.setPosition(this->pacman.getPosition().x-20,this->pacman.getPosition().y);
+            cont++;
+            
+            grid[13+x-1][11+y]==2;
+            grid[13+x][11+y]==0;
+            x--;
+           
+
+        }else{
+            p=rand()%3+1;
+        }
     }
+    if(p==2){
+        cout<<"entra"<<endl;
+        if(grid[13+x+1][11+y]==0){
+            this->pacman.setPosition(this->pacman.getPosition().x+20,this->pacman.getPosition().y);
+            cont++;
+
+            grid[13+x+1][11+y]==2;
+            grid[13+x][11+y]==0;
+            x++;
+           
+
+        }else{
+            p=rand()%3+1;
+        }
+        
+    }
+    if(p==3){
+         cout<<"entra"<<endl;
+
+        if(grid[13+x][11+y-1]==0){
+            this->pacman.setPosition(this->pacman.getPosition().x,this->pacman.getPosition().y-20);
+            cont++;
+
+            grid[13+x][11+y-1]==2;
+            grid[13+x][11+y]==0;
+            y--;
+           
+
+        }else{
+            p=rand()%3+1;
+        }
+    }
+    if(p==4){
+         cout<<"entra"<<endl;
+        if(grid[13+x][11+y+1]==0){
+            this->pacman.setPosition(this->pacman.getPosition().x,this->pacman.getPosition().y+20);
+            cont++;
+
+            grid[13+x][11+y+1]==2;
+            grid[13+x][11+y]==0;
+            y++;
+           
+
+        }else{
+            p=rand()%3+1;
+        }
+    }
+    
+}

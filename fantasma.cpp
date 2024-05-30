@@ -67,7 +67,7 @@ void Fantasma::mover(vector<vector<int>> &grid,int p, int &cont){
     if(cont!=0){
         cont++;
     }
-    if(cont==25){
+    if(cont==15){
         cont=0;
     }
 }
