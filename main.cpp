@@ -44,15 +44,16 @@ int main() {
 //     // Crear un texto para mostrar el tiempo
   sf::Text text;
   text.setFont(font);
- text.setCharacterSize(24);
+ text.setCharacterSize(20);
  text.setFillColor(sf::Color::Blue);
 
-  text.setPosition(210.f, 260.f); //posicion
+  text.setPosition(225.f, 238.f); //posicion
 
    
     int coolddown=0;
-//     // Tiempo total del temporizador en segundos
-  const float totalTime = 10.f;
+const int totalTime = 60; // Tiempo total del temporizador en segundos
+    int remainingTime = totalTime;
+
 
     // Bucle principal de la aplicación
     
@@ -110,19 +111,25 @@ int main() {
             // rojo.update(p);
             rojo.drawTo(window);
             amarillo.drawTo(window);
-            //window.draw(text);
+            window.draw(text);
             window.display();
             window.clear();
            // Movimiento del fantasma con teclas flecha
         
         // Obtener el tiempo transcurrido
         sf::Time elapsed = clock.getElapsedTime();
-        float seconds = elapsed.asSeconds();
-
+        int seconds = totalTime - elapsed.asSeconds();
+        if (seconds != remainingTime) {
+            remainingTime = seconds;
+            // Actualizar el texto
+            std::ostringstream ss;
+            ss << "Tiempo: " << remainingTime;
+            text.setString(ss.str());
+        }
         // Convertir el tiempo transcurrido a segundos y actualizar el texto
-        std::ostringstream ss;
-        ss << "Tiempo: " << seconds;
-        text.setString(ss.str());
+       if (seconds <= 0) {
+            break;
+        }
 
         // Calcular el tamaño del círculo basado en el tiempo transcurrido
         
