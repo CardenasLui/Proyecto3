@@ -72,7 +72,20 @@ void Fantasma::mover(vector<vector<int>> &grid,int p, int &cont){
         cont=0;
     }
 }
-
+void Fantasma::update(vector<vector<int>>&grid,Pacman &amarillo, const int&totalTime){
+    if(this->fantasma.getPosition() == amarillo.pacman.getPosition()){
+        this->fantasma.setPosition(260,340);
+        grid [13][17];
+        this->x=0;
+        this->y=0;
+        amarillo.pacman.setPosition(260,220);
+        grid [13][11];
+        amarillo.x=0;
+        amarillo.y=0;
+        //totalTime = 60;
+    
+    }
+}
 
 
 

@@ -107,7 +107,7 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
         //Mapagrid.spawn(&rojo);
             rojo.mover(Mapagrid.grid,p, coolddown);
             amarillo.mover(Mapagrid.grid,a, cdfantasma);
-            
+            rojo.update(Mapagrid.grid, amarillo, totalTime);
             Mapagrid.drawTo(window);
             window.draw(sprite);
             

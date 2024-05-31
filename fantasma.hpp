@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "pacman.hpp"
 using namespace std;
 using namespace sf;
 
@@ -13,7 +14,7 @@ class Fantasma{
     Fantasma(Vector2f position);
     void drawTo(RenderWindow &window);
     void mover(vector<vector<int>>&grid,int p, int &cont);
-    //void Fantasma::update(vector<vector<int>>&grid,Pacman &amarillo, int&totalTime);
+    void update(vector<vector<int>>&grid,Pacman &amarillo, const int&totalTime);
  };
 
         //     Movimiento del fantasma con teclas flecha

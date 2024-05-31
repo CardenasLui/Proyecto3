@@ -12,7 +12,6 @@ class Pacman{
     int dir;
     Sprite pacman;
     Pacman(Vector2f position);
-    void UpdatePac(vector<vector<int>> grid);
     void drawTo(RenderWindow &window);
     void mover(vector<vector<int>> &grid, int&a, int&cont);
  };
