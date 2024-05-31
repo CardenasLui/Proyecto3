@@ -13,6 +13,7 @@ class Fantasma{
     Fantasma(Vector2f position);
     void drawTo(RenderWindow &window);
     void mover(vector<vector<int>>&grid,int p, int &cont);
+    //void Fantasma::update(vector<vector<int>>&grid,Pacman &amarillo, int&totalTime);
  };
 
         //     Movimiento del fantasma con teclas flecha

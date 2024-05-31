@@ -26,7 +26,7 @@ Pacman::Pacman(Vector2f position){
     
 void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
 
-    if(p==1 ){
+    if(p==1 && cont==0){
         
         if(grid[13+x-1][11+y]==0){
             this->pacman.setPosition(this->pacman.getPosition().x-20,this->pacman.getPosition().y);
@@ -41,7 +41,7 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
             p=rand()%4+1;
         }
     }
-    if(p==2){
+    if(p==2 && cont==0){
         
         if(grid[13+x+1][11+y]==0){
             this->pacman.setPosition(this->pacman.getPosition().x+20,this->pacman.getPosition().y);
@@ -57,7 +57,7 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
         }
         
     }
-    if(p==3){
+    if(p==3 && cont==0){
          
 
         if(grid[13+x][11+y-1]==0){
@@ -73,7 +73,7 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
             p=rand()%4+1;
         }
     }
-    if(p==4){
+    if(p==4 && cont==0){
          
         if(grid[13+x][11+y+1]==0){
             this->pacman.setPosition(this->pacman.getPosition().x,this->pacman.getPosition().y+20);
@@ -87,6 +87,12 @@ void Pacman::mover(vector<vector<int>> &grid, int &p, int &cont){
         }else{
             p=rand()%4+1;
         }
+    }
+    if(cont!=0){
+        cont++;
+    }
+    if(cont==15){
+        cont=0;
     }
     
 }
