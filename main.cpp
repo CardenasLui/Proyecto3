@@ -7,9 +7,10 @@
 #include <sstream>
 using namespace sf;
 using namespace std;
+
 int main() {
      // Crear la ventana
-     int a=rand()%4+1;
+    int a=rand()%4+1;
     sf::RenderWindow window(sf::VideoMode(560, 620), "Pac-man 101");
     window.setFramerateLimit(60);
     mapagrid Mapagrid(32,28);
@@ -53,12 +54,8 @@ int main() {
    
     int coolddown=0;
     int cdfantasma=0;
-const int totalTime = 60; // Tiempo total del temporizador en segundos
+    const int totalTime = 60; // Tiempo total del temporizador en segundos
     int remainingTime = totalTime;
-
-
-    // Bucle principal de la aplicación
-    
 
    // Crear sprite y asociarlo a la textura
     sf::Sprite sprite(texture);
@@ -107,7 +104,8 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
         //Mapagrid.spawn(&rojo);
             rojo.mover(Mapagrid.grid,p, coolddown);
             amarillo.mover(Mapagrid.grid,a, cdfantasma);
-            rojo.update(Mapagrid.grid, amarillo, totalTime);
+            rojo.update(Mapagrid.grid, amarillo, clock);
+
             Mapagrid.drawTo(window);
             window.draw(sprite);
             
@@ -120,12 +118,12 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
            // Movimiento del fantasma con teclas flecha
         
         // Obtener el tiempo transcurrido
-        sf::Time elapsed = clock.getElapsedTime();
+        Time elapsed = clock.getElapsedTime();
         int seconds = totalTime - elapsed.asSeconds();
-        if (seconds != remainingTime) {
+        if(seconds != remainingTime) {
             remainingTime = seconds;
             // Actualizar el texto
-            std::ostringstream ss;
+            ostringstream ss;
             ss << "Tiempo: " << remainingTime;
             text.setString(ss.str());
         }
@@ -133,6 +131,7 @@ const int totalTime = 60; // Tiempo total del temporizador en segundos
        if (seconds <= 0) {
             return 0;
         }
+
 
         // Calcular el tamaño del círculo basado en el tiempo transcurrido
         

@@ -15,7 +15,6 @@ Fantasma::Fantasma(Vector2f position){
     //this->fantasma.setScale(1.5,1.5);
     this->x=0;
     this->y=0;
-    
 }
 
 void Fantasma::drawTo(RenderWindow &window){
@@ -24,7 +23,6 @@ void Fantasma::drawTo(RenderWindow &window){
 
 
 void Fantasma::mover(vector<vector<int>> &grid,int p, int &cont){
-    cout<<cont<<endl;
     if(p==1 && cont==0){
         if(grid[13+x-1][17+y]==0){
             this->fantasma.setPosition(this->fantasma.getPosition().x-20,this->fantasma.getPosition().y);
@@ -72,7 +70,8 @@ void Fantasma::mover(vector<vector<int>> &grid,int p, int &cont){
         cont=0;
     }
 }
-void Fantasma::update(vector<vector<int>>&grid,Pacman &amarillo, const int&totalTime){
+
+void Fantasma::update(vector<vector<int>>&grid, Pacman &amarillo, sf::Clock &clock){
     if(this->fantasma.getPosition() == amarillo.pacman.getPosition()){
         this->fantasma.setPosition(260,340);
         grid [13][17];
@@ -82,12 +81,7 @@ void Fantasma::update(vector<vector<int>>&grid,Pacman &amarillo, const int&total
         grid [13][11];
         amarillo.x=0;
         amarillo.y=0;
-        //totalTime = 60;
-    
+        clock.restart();
     }
 }
-
-
-
-
 

@@ -9,12 +9,12 @@ class Fantasma{
     private:
     sf::Texture texture;
     public:
-    int x,y;
+    int x, y;
     Sprite fantasma;
     Fantasma(Vector2f position);
     void drawTo(RenderWindow &window);
     void mover(vector<vector<int>>&grid,int p, int &cont);
-    void update(vector<vector<int>>&grid,Pacman &amarillo, const int&totalTime);
+    void update(vector<vector<int>>&grid,Pacman &amarillo, sf::Clock &clock);
  };
 
         //     Movimiento del fantasma con teclas flecha
