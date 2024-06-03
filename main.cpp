@@ -1,5 +1,6 @@
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "mapa.hpp"
 #include "fantasma.hpp"
 #include "Pacman.hpp"
